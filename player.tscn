@@ -160,10 +160,9 @@ tracks/0/keys = {
 "values": [1]
 }
 
-[sub_resource type="Animation" id="Animation_6mn5t"]
-resource_name = "walk_right"
+[sub_resource type="Animation" id="Animation_6rqvt"]
+resource_name = "death"
 length = 0.5
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -171,14 +170,14 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_6uxjm"]
-resource_name = "walk_left"
+[sub_resource type="Animation" id="Animation_i84yj"]
+resource_name = "walk_back"
 length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
@@ -211,8 +210,8 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_i84yj"]
-resource_name = "walk_back"
+[sub_resource type="Animation" id="Animation_6uxjm"]
+resource_name = "walk_left"
 length = 0.5
 loop_mode = 1
 tracks/0/type = "value"
@@ -228,9 +227,10 @@ tracks/0/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_6rqvt"]
-resource_name = "death"
+[sub_resource type="Animation" id="Animation_6mn5t"]
+resource_name = "walk_right"
 length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -238,10 +238,10 @@ tracks/0/path = NodePath("AnimatedSprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3]
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ewi7p"]
@@ -255,6 +255,8 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_ct2n5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
